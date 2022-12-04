@@ -34,20 +34,26 @@ print(films[::-1])
 
 # Задача 4- Необходимо удалить пустые строки из списка строк.
 if __name__ == '__main__':
- 
+
     films = ['Knockin On Heavens Door','','invisible guest','', 'Eyes Wide Shut', 'Nocturnal Animals'] 
- 
+
     try:
         while True:
             films.remove('')
     except ValueError:
         pass
- 
     print(films) 
 
 # Задача 5- Даны списки:
 #a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 #b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].
 #Нужно вернуть список, который состоит из элементов, общих для этих двух списков
-
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+c = []
+for i in range(len(a)):
+   for j in range(len(b)):
+       if a[i] == b[j]:
+           c.append(a[i])
+print(list(c))
 
