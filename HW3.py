@@ -33,6 +33,17 @@ films = ['Knockin On Heavens Door', 'invisible guest', 'Eyes Wide Shut', 'Noctur
 print(films[::-1])
 
 # Задача 4- Необходимо удалить пустые строки из списка строк.
+if __name__ == '__main__':
+ 
+    films = ['Knockin On Heavens Door','','invisible guest','', 'Eyes Wide Shut', 'Nocturnal Animals'] 
+ 
+    try:
+        while True:
+            films.remove('')
+    except ValueError:
+        pass
+ 
+    print(films) 
 
 # Задача 5- Даны списки:
 #a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
