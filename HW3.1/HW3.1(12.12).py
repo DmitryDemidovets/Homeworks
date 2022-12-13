@@ -15,7 +15,7 @@ def response():
     return str
         
 def record(x):
-    with open('json_to_txt\cocktails.txt', 'w+') as f:
+    with open('cocktails.txt', 'w+') as f:
         f.write(x)       
 
 record(response())
