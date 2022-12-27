@@ -31,3 +31,4 @@ def print_result(func: float):
     print(func)
 
 print(print_result(calc(a, b, operator)))
+###
