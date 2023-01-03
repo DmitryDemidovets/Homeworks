@@ -43,27 +43,23 @@ for i in range(num_of_enemies):
 # Bullet
 # Ready - You can't see the bullet on the screen
 # Fire - The bullet is currently moving
- 
 bulletImg = pygame.image.load('bullet.png')
 bulletX = 0
 bulletY = 380
 bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
- 
-# Score
+ # Score
 score_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 textX = 10
 testY = 10
- 
-# Game Over
+ # Game Over
 over_font = pygame.font.Font('freesansbold.ttf', 64)
- 
+
 def show_score(x, y):
     score = font.render("Score : " + str(score_value), True, (255, 255, 255))
     screen.blit(score, (x, y))
- 
 def game_over_text():
     over_text = over_font.render("GAME OVER", True, (255, 255, 255))
     screen.blit(over_text, (200, 250))
@@ -85,19 +81,16 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
         return True
     else:
         return False
- 
-# Game Loop
+ # Game Loop
 running = True
 while running:
- 
-# RGB = Red, Green, Blue
+ # RGB = Red, Green, Blue
     screen.fill((0, 0, 0))
- 
-# Background Image
-screen.blit(background, (0, 0))
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        running = False
+ # Background Image
+    screen.blit(background, (0, 0))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
  
 # if keystroke is pressed check whether its right or left
 if event.type == pygame.KEYDOWN:
