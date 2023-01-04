@@ -1,4 +1,5 @@
-'''Написать игру space inviders
+'''
+Написать игру space inviders
 1) Добавляем констаны (экран, цвета и т.п)
 2) Параметры игрока, параметры врагов, выстрелов
 3) Игровые функции и условия
@@ -7,51 +8,37 @@ import pygame
 import time
 import random
 import math
+import os
 from pygame import mixer
-from display import *
- 
- 
+from modules import *
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-background = pygame.image.load('background.png')
- 
-mixer.music.load('background.wav')
+#components
+game_dir = os.path.dirname(__file__)
+components_dir = os.path.join(game_dir,'components')
+
+background = pygame.image.load(os.path.join(components_dir,'background.png'))
+enemyImg = pygame.image.load(os.path.join(components_dir,'enemy.png'))
+playerImg = pygame.image.load(os.path.join(components_dir,'player.png'))
+
+mixer.music.load(os.path.join(components_dir,'background.wav'))
 mixer.music.play(-1)
 pygame.display.set_caption('Space invider')
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load(os.path.join(components_dir,'ufo.png'))
 pygame.display.set_icon(icon)
- 
-playerImg = pygame.image.load('player.png')
-playerX = 370
-playerY = 380
-playerX_change = 0
-enemyImg = pygame.image.load('enemy.png')
- 
-enemyX = []
-enemyY = []
-enemyX_change = []
-enemyY_change = []
-num_of_enemies = 6
- 
+
 for i in range(num_of_enemies):
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
- 
-bulletImg = pygame.image.load('bullet.png')
-bulletX = 0
-bulletY = 380
-bulletX_change = 0
-bulletY_change = 10
-bullet_state = "ready"
- 
- # Score
+
+bulletImg = pygame.image.load(os.path.join(components_dir,'bullet.png'))
+# Score
 score_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 textX = 10
 testY = 10
- 
-# Game Over
+ # Game Over
 over_font = pygame.font.Font('freesansbold.ttf', 64)
  
 def show_score(x, y):
@@ -65,8 +52,8 @@ def game_over_text():
 def player(x, y):
     screen.blit(playerImg, (x, y))
   
-def enemy(x, y, i):
-    screen.blit(enemyImg[i], (x, y))
+def enemy(x, y):
+    screen.blit(enemyImg, (x, y))
  
 def fire_bullet(x, y):
     global bullet_state
@@ -94,7 +81,7 @@ while running:
                 playerX_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bulletSound = mixer.Sound("laser.wav")
+                    bulletSound = mixer.Sound("components/laser.wav")
                     bulletSound.play()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -116,5 +103,6 @@ while running:
     player(playerX, playerY)
     show_score(textX, testY)
     pygame.display.update()
+
  
 
