@@ -59,14 +59,7 @@ def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
     screen.blit(bulletImg, (x + 16, y + 10))
- 
-def isCollision(enemyX, enemyY, bulletX, bulletY):
-    distance = math.sqrt(math.pow(enemyX - bulletX, 2) + (math.pow(enemyY - bulletY, 2)))
-    if distance < 27:
-        return True
-    else:
-        return False
- 
+    
 running = True
 while running:
     screen.fill((0, 0, 0))
@@ -81,7 +74,7 @@ while running:
                 playerX_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bulletSound = mixer.Sound("components/laser.wav")
+                    bulletSound = mixer.Sound(os.path.join(components_dir,"laser.wav"))
                     bulletSound.play()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -99,7 +92,7 @@ while running:
             playerX = 0
         elif playerX >= 736:
             playerX = 736
- 
+
     player(playerX, playerY)
     show_score(textX, testY)
     pygame.display.update()
