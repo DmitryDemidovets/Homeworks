@@ -1,4 +1,4 @@
 #player
 playerX = 370
-playerY = 380
+playerY = 500
 playerX_change = 0
