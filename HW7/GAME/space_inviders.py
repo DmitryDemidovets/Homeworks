@@ -13,25 +13,44 @@ from pygame import mixer
 from modules import *
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-#components
+
+
+# components 
 game_dir = os.path.dirname(__file__)
 components_dir = os.path.join(game_dir,'components')
 
+# background, enemy, player images
 background = pygame.image.load(os.path.join(components_dir,'background.png'))
 enemyImg = pygame.image.load(os.path.join(components_dir,'enemy.png'))
 playerImg = pygame.image.load(os.path.join(components_dir,'player.png'))
 
+# background sound
 mixer.music.load(os.path.join(components_dir,'background.wav'))
 mixer.music.play(-1)
+# name of the game and icon
 pygame.display.set_caption('Space invider')
 icon = pygame.image.load(os.path.join(components_dir,'ufo.png'))
 pygame.display.set_icon(icon)
 
+number_of_enemies = 10
+enemies = []
+
+
+    
+for enemy in enemies:
+    enemy.shape(os.path.join(components_dir,'enemy.png'))
+    enemy.penup()
+    enemy.speed(0)
+    x = random.randint(-200, 200)
+    y =  random.randint(100, 250)
+    enemy.setposition(x, y)
+
+enemyspeed = 5
 for i in range(num_of_enemies):
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
-
+# bullet image
 bulletImg = pygame.image.load(os.path.join(components_dir,'bullet.png'))
 # Score
 score_value = 0
