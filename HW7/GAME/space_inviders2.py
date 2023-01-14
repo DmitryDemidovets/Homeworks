@@ -1,3 +1,4 @@
+from turtle import width
 import pygame
 import os
 from pygame import mixer
@@ -37,6 +38,16 @@ YELLOW_LASER = pygame.image.load(os.path.join(components_dir,'bullet.png'))
 
 # бэкграунд
 BG = pygame.transform.scale(pygame.image.load(os.path.join(components_dir,'background.png')), (WIDHT,HEIGHT))
+
+class Laser():
+    def __init__(self, x, y, img):
+        self.x = x
+        self.y = y
+        self.img = img
+        self.mask = pygame.mask.from_surface(self.img)
+    def draw(self, window):
+        window.blit(self.img, (self.x, self.y))
+    def move(self, vel):
 
 class Ship():
     def __init__(self, x, y, health=100):
@@ -87,6 +98,7 @@ def main():
     level = 0
     lives = 5
     main_font = pygame.font.SysFont("comicsans", 50)
+    lost_font = pygame.font.SysFont("comicsans", 60)
 
     enemies = []
     wave_length = 5 
@@ -98,6 +110,9 @@ def main():
     player = Player(300,650)
 
     clock = pygame.time.Clock()
+
+    lost = False
+    lost_count = 0
 
     def redraw_window():
         WIN.blit(BG,(0,0))
@@ -112,12 +127,22 @@ def main():
             enemy.draw(WIN)
         
         player.draw(WIN)
-        
-        
+        if lost:
+            lost_label = lost_font.render("You Lost!!!", 1,(255, 255,255))
+            WIN.blit(lost_label, (WIDHT/2 - lost.label.get_widht()/2, 350))
         pygame.display.update()
     while run:
         clock.tick(FPS)
-        
+        redraw_window()
+
+        if lives <= 0 or player.health <= 0:
+            lost = True
+            lost_count += 1
+        if lost:
+            if lost_count > FPS * 3:
+                run = False
+            else:
+                continue
         if len(enemies) == 0:
             level += 1
             wave_lenght += 5
@@ -144,7 +169,7 @@ def main():
                 enemies.remove(enemy)
 
 
-        redraw_window()
+        
 
 main()
 
