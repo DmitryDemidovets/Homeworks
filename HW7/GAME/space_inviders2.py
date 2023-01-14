@@ -69,12 +69,25 @@ class Ship():
 
     def draw(self, window):
         window.blit(self.player_img, (self.x, self.y))
+        for laser in self.lasers:
+            laser.draw(window)
+
+    def move_lasers(self, vel, obj):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.move(vel)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            elif laser.collision(obj):
+                obj.health -= 10
+                self.lasers.remove(laser)
+
 
     def cooldown(self):
         if self.cool_down_counter >= self.COOLDOWN:
             self.cool_down_counter = 0
-        else:
-            self.cool_down_counter += 1 
+        elif self.cool_down_counter > 0:
+            self.cool_down_counter += 1
     
     def shoot(self):
         if self.cool_down_counter == 0:
@@ -186,7 +199,8 @@ def main():
             player.y -= player_vel
         if keys[pygame.K_s] and player.y + player_vel + player.get_height() < HEIGHT: #вниз
             player.y += player_vel
-
+        if keys[pygame.K_SPACE]:
+            player.shoot()
         for enemy in enemies[:]:
             enemy.move(enemy_vel)
             if enemy.y + enemy.get_height() > HEIGHT:
