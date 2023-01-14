@@ -7,13 +7,11 @@
 import pygame
 import time
 import random
-import math
 import os
 from pygame import mixer
 from modules import *
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-
 
 # components 
 game_dir = os.path.dirname(__file__)
@@ -23,6 +21,9 @@ components_dir = os.path.join(game_dir,'components')
 background = pygame.image.load(os.path.join(components_dir,'background.png'))
 enemyImg = pygame.image.load(os.path.join(components_dir,'enemy.png'))
 playerImg = pygame.image.load(os.path.join(components_dir,'player.png'))
+
+# bullet image
+bulletImg = pygame.image.load(os.path.join(components_dir,'bullet.png'))
 
 # background sound
 mixer.music.load(os.path.join(components_dir,'background.wav'))
@@ -34,6 +35,16 @@ pygame.display.set_icon(icon)
 
 number_of_enemies = 10
 enemies = []
+
+# падающие предметы
+def things(thing_x, thing_y, thing_w, thing_h, color):
+    pygame.draw.rect(game_display, color, [thing_x, thing_y, thing_w, thing_h])
+ 
+# счетчик падающих предметов, которые мы проехали
+def things_dodget(count):
+    font = pygame.font.SysFont(None, 50)
+    text = font.render("Dodged: " + str(count), True, black)
+    game_display.blit(text, (0, 0))
 
 
     
@@ -50,8 +61,7 @@ for i in range(num_of_enemies):
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
-# bullet image
-bulletImg = pygame.image.load(os.path.join(components_dir,'bullet.png'))
+
 # Score
 score_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
