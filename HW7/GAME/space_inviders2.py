@@ -26,6 +26,7 @@ BLUE_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'enemy.png'))
 # загрузка изображения корабля игрока
 YELLOW_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'player.png'))
 
+
 # загрузка изображения лазера
 RED_LASER = pygame.image.load(os.path.join(components_dir,'bullet.png'))
 GREEN_LASER = pygame.image.load(os.path.join(components_dir,'bullet.png'))
@@ -64,24 +65,14 @@ class Ship():
         self.health = health
         self.enemy_img = None
         self.laser_img = None
+        self.ship_img = YELLOW_SPACE_SHIP
         self.lasers = []
         self.cool_down_counter = 0
 
     def draw(self, window):
-        window.blit(self.player_img, (self.x, self.y))
+        window.blit(self.ship_img, (self.x, self.y))
         for laser in self.lasers:
             laser.draw(window)
-
-    def move_lasers(self, vel, obj):
-        self.cooldown()
-        for laser in self.lasers:
-            laser.move(vel)
-            if laser.off_screen(HEIGHT):
-                self.lasers.remove(laser)
-            elif laser.collision(obj):
-                obj.health -= 10
-                self.lasers.remove(laser)
-
 
     def cooldown(self):
         if self.cool_down_counter >= self.COOLDOWN:
@@ -105,9 +96,21 @@ class Player(Ship):
     def __init__(self, x, y, health=100):
         super().__init__(x, y, health)
         self.ship_img = YELLOW_SPACE_SHIP
-        self.laser_img = YELLOW_LASER 
+        self.laser_img = YELLOW_LASER
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health 
+
+    def move_lasers(self, vel, objs):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.move(vel)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            else:
+                for obj in objs: 
+                    if laser.collision(obj):
+                        objs.remove(obj)
+                        self.lasers.remove(laser)
 
 class Enemy(Ship):
     COLOR_MAP = {
@@ -122,7 +125,7 @@ class Enemy(Ship):
         self.ship_img, self.laser_img = self.COLOR_MAP[color]
         self.mask = pygame.mask.from_surface(self.ship_img)
 
-        def move(self, vel):
+    def move(self, vel):
             self.y += vel
 
 def collide(obj1, obj2):
@@ -139,7 +142,9 @@ def main():
     lost_font = pygame.font.SysFont("comicsans", 60)
 
     enemies = []
-    wave_length = 5 
+    global wave_length 
+    wave_length = 5
+   
 
     player_vel = 5
 
@@ -172,6 +177,7 @@ def main():
     while run:
         clock.tick(FPS)
         redraw_window()
+        wave_length = 5
 
         if lives <= 0 or player.health <= 0:
             lost = True
@@ -183,7 +189,6 @@ def main():
                 continue
         if len(enemies) == 0:
             level += 1
-            wave_lenght += 5
             for i in range(wave_length):
                 enemy = Enemy(random.randrange(50, WIDHT-100), random.randrange(-1500, -100), random.choice(["red", "blue", "green"]))
                 enemies.append(enemy)
