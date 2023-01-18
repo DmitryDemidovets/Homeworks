@@ -6,3 +6,32 @@
 присвоение автомобилю года выпуска. Четвертый метод — присвоение автомобилю типа.
 Пятый — присвоение автомобилю цвета.
 """
+#cоздание класса Car
+
+class Car:
+    def __init__ (self, color, type, year):
+        self.color = color
+        self.type = type
+        self.year = year
+
+    # метод запуска двигателя (1)
+    def engine_starting(self):
+        print("Автомобиль заведен")
+
+    # метод выключения двигателя (2)
+    def engine_shutdown(self):
+        print("Автомобиль заглушен")
+
+    # метод присвоения автомобилю года выпуска (3)
+    def year_assignment(self):
+        self.year = year
+
+    # метод присвоения автомобилю типа (4)
+    def type_assignment(self):
+        self.type = type
+
+    # метод присвоения автомобилю цвета (5)
+    def color_assignment(self):
+        self.color = color
+
+
