@@ -25,7 +25,7 @@ GREEN_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'enemy.png'))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'enemy.png'))
 
 # загрузка изображения корабля игрока
-YELLOW_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'player.png'))
+YELLOW_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'player2.png'))
 
 # загрузка изображения лазера
 YELLOW_LASER = pygame.image.load(os.path.join(components_dir,'bullet.png'))
@@ -36,7 +36,7 @@ mixer.music.play(-1)
 
 # звук лазера
 #mixer.music.load(os.path.join(components_dir,'laser.wav'))
-# mixer.music.play(-1)
+#mixer.music.play(-1)
 
 # бэкграунд
 BG = pygame.transform.scale(pygame.image.load(os.path.join(components_dir,'background.png')), (WIDTH,HEIGHT))
@@ -237,7 +237,7 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
             bulletSound = mixer.Sound(os.path.join(components_dir,"laser.wav"))
-            bulletSound.play(-1)
+            bulletSound.play()
 
         for enemy in enemies[:]:
             enemy.move(enemy_vel)
