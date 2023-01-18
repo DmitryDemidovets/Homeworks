@@ -7,6 +7,7 @@
 Пятый — присвоение автомобилю цвета.
 """
 #cоздание класса Car
+
 class Car:
     def __init__ (self, color, type, year):
         self.color = color
@@ -28,7 +29,7 @@ class Car:
     # метод присвоения автомобилю типа (4)
     def type_assignment(self):
         self.type = type
-        
+
     # метод присвоения автомобилю цвета (5)
     def color_assignment(self):
         self.color = color
