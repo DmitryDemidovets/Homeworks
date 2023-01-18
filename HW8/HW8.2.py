@@ -8,4 +8,22 @@ class Math:
     def __init__ (self, a, b):
         self.a = a
         self.b = b
-        
+    #метод addition
+    def addition(self):
+        print(self.a+self.b)
+
+    #метод multiplication
+    def multiplication(self):
+        print(self.a*self.b)
+
+    #метод division
+    def division(self):
+        print(self.a/self.b)
+
+    #метод subtraction
+    def subtraction(self, a, b):
+        print(self.a-self.b)
+
+
+
+
