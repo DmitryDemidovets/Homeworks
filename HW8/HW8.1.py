@@ -9,26 +9,24 @@ age. По умолчанию name = Ivan, age = 18, groupNumber = 10A. Необ�
 экземпляров класса Student, установить им разные имена, возраст и номер группы.
 '''
 
-from typing import self
-
 # создаем класс Student
 class Student:
-    def __init__(self, name, groupNumber, age):
-    self.name = name
-    self.groupNumber = groupNumber
-    self.age = age
+    def __init__(self, name="Ivan", groupNumber = "10A", age = 18):
+        self.name = name
+        self.groupNumber = groupNumber
+        self.age = age
 
     # метод getName-для получения данных об имени конкретного студента
-    def getName(self, name):
-         print ("Имя студента:", self.name)
+    def getName(self):
+        print ("Имя студента:", self.name)
 
     # метод getAge- для получения данных о возрасте конкретного студента
-    def getAge(self, age):
+    def getAge(self):
         print ("Возраст студента:", self.age)
 
     # метод getGroupNumber-для получения данных о номере группы конкретного студента
-    def getGroupNumber(self, groupNumber):
-        print ("Номер группы", self.groupNumber)
+    def getGroupNumber(self):
+        print ("Номер группы:", self.groupNumber)
     
     # метод setNameAge-изменить данные атрибутов установленных по умолчанию
     def setNameAge(self, name, age):
@@ -39,7 +37,7 @@ class Student:
     def setGroupNumber(self, groupNumber):
         self.groupNumber = groupNumber
 
-
+# Объекты класса Student
 Dmitry = Student("Dmitry", 30, "10B")
 Anna = Student("Anna", 29, "11C")
 Viktor = Student("Viktor", 28, "12D")
