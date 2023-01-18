@@ -5,6 +5,7 @@ import random
 from pygame import mixer
 from modules import *
 pygame.font.init()
+pygame.mixer.init()
 
 WIDTH, HEIGHT = 900, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -29,9 +30,9 @@ YELLOW_SPACE_SHIP = pygame.image.load(os.path.join(components_dir,'player.png'))
 # загрузка изображения лазера
 YELLOW_LASER = pygame.image.load(os.path.join(components_dir,'bullet.png'))
 
-# !!!!! фоновая музыка временно закоментированна pygame.error: mixer not initialized
-#mixer.music.load(os.path.join(components_dir,'background.wav'))
-#mixer.music.play(-1)
+# фоновая музыка
+mixer.music.load(os.path.join(components_dir,'background.wav'))
+mixer.music.play(-1)
 
 # звук лазера
 #mixer.music.load(os.path.join(components_dir,'laser.wav'))
@@ -236,7 +237,7 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
             bulletSound = mixer.Sound(os.path.join(components_dir,"laser.wav"))
-            bulletSound.play()
+            bulletSound.play(-1)
 
         for enemy in enemies[:]:
             enemy.move(enemy_vel)
