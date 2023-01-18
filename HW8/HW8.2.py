@@ -21,7 +21,7 @@ class Math:
         print(self.a/self.b)
 
     #метод subtraction
-    def subtraction(self, a, b):
+    def subtraction(self):
         print(self.a-self.b)
 
 
