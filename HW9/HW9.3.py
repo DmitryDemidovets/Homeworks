@@ -3,6 +3,7 @@
 from tkinter import *
 root = Tk()
 root.title('Телефонная книга')
+
 def numbers_and_names():
     # берем данные имени из первого поля
     a = EntryA.get() 
@@ -18,6 +19,7 @@ def numbers_and_names():
     EntryC.delete(0, END) 
     # вставляем результат в начало
     EntryC.insert(0, result)  
+
 # первая метка в строке, выравниваем
 Label(root, text='Введите имя:').grid(row=0, sticky=W)
 # вторая метка в строке 1
@@ -39,5 +41,4 @@ EntryC.grid(row=2, columnspan=2)
 but = Button(root, text='Вывести данные')
 but = Button(root, text='Вывести данные', command=numbers_and_names)
 but.grid(row=3, column=1, sticky=E)
-
 root.mainloop()
