@@ -3,7 +3,6 @@
 from tkinter import *
 root = Tk()
 root.title('Телефонная книга')
-
 def numbers_and_names():
     # берем данные имени из первого поля
     a = EntryA.get() 
