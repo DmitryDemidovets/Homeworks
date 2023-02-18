@@ -34,7 +34,7 @@ class Database():
         self.create_table()
         self.cur.executemany("REPLACE INTO clients VALUES(?,?,?)", dates)
 
-    def sort_from_largest_to_smallest (self, age):
+    def sort_from_largest_to_smallest (self):
         sql_select_query ='''SELECT * FROM clients ORDER BY age DESC?'''
         self.cur.execute(sql_select_query, (age,))
         result = self.cur.fetchall()
