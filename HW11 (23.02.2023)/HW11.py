@@ -16,23 +16,31 @@ class Database():
     def __init__(self,database):
         self.con = sql.connect(database)
         self.cur = self.con.cursor()
+
     def create_table_books(self):
-        self.cur.execute("CREATE TABLE IF NOT EXISTS favorite_booksv (id INTEGER PRIMARY KEY AUTOINCREMENT, book_name VARCHAR(50),author VARCHAR(50),year_of_release INTEGER")
+        self.cur.execute('''
+        CREATE TABLE IF NOT EXISTS favorite_books
+        (id INTEGER PRIMARY KEY,
+        book_name VARCHAR(50),
+        author VARCHAR(50),
+        year_of_publishing INTEGER)
+        ''')
+
         self.con.commit()
 
-    def insert_table_favorite_books(self):
-        self.cur.executemany('''INSERT or IGNOR INTO favorite_books (id, book_name, author, year_of_publishing) VALUES (?, ?, ?)''', data)
+    def insert_table_books(self, data):
+        self.cur.executemany('''INSERT INTO favorite_books (id, book_name, author, year_of_publishing) VALUES (?, ?, ?, ?)''', data)
         self.con.commit()
     
     def get_all_info(self):
-        sql_select_querry = '''SELECT * FROM favorite_books'''
+        sql_select_query = '''SELECT * FROM favorite_books'''
         self.cur.execute(sql_select_query)
         result = self.cur.fetchall()
-        return print('Данные обо всех книгах', book_name, author, year_of_publishing, ':', result)
+        return print('Данные обо всех книгах', result)
 
-    def get_info_by_id(self):
-        sql_select_query ='''SELECT * FROM favorite_books WHERE ID = 2'''
-        self.cur.execute(sql_select_query, (id,))
+    def get_info_by_id(self, id):
+        sql_select_query ='''SELECT * FROM favorite_books WHERE ID = {}'''.format(id)
+        self.cur.execute(sql_select_query)
         result = self.cur.fetchall()
         return print('Книга с указанным номером', id ,  ':', result)
 
@@ -48,14 +56,14 @@ def main():
         ]
 
     db1 = Database('favorite_books.db')
-    db1.create_table_books(favorite_books)
+    db1.create_table_books()
     db1.insert_table_books(favorite_books)
-   
+
     db1.get_all_info()
     db1.get_info_by_id(2)
 
 if __name__ == '__main__':
-    main()       
+    main()
 
 
 
