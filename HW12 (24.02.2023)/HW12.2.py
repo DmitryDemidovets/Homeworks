@@ -12,7 +12,7 @@ class Database():
     def create_table_clients(self):
         self.cur.execute('''
         CREATE TABLE IF NOT EXISTS clients
-        (id INTEGER PRIMARY KEY,
+        (id INTEGER PRIMARY KEY AUTOINCREMENT,
         name VARCHAR(50),
         gender VARCHAR(50),
         services VARCHAR(50)
