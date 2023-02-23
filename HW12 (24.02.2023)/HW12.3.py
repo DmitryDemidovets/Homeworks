@@ -98,6 +98,6 @@ def main():
     db1.get_all_animals_over_two_years_old()
     db1.get_all_animals_over_three_years_old()
     db1.get_male_animals()
-
+    
 if __name__ == '__main__':
     main()
