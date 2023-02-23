@@ -22,7 +22,7 @@ class Database():
         self.con.commit()
 
     def insert_table_animals(self, data):
-        self.cur.executemany('''INSERT INTO animals (id, animal_name, gender, age) VALUES (?, ?, ?, ?)''', data)
+        self.cur.executemany('''INSERT or IGNORE INTO animals (id, animal_name, gender, age) VALUES (?, ?, ?, ?)''', data)
         self.con.commit()
 
 # Создаем 2-ю таблицу с животными
@@ -38,11 +38,11 @@ class Database():
         self.con.commit()
 
     def insert_table_animals2(self, data):
-        self.cur.executemany('''INSERT INTO animals2 (id, animal_name, gender, age) VALUES (?, ?, ?, ?)''', data)
+        self.cur.executemany('''INSERT or IGNORE INTO animals2 (id, animal_name, gender, age) VALUES (?, ?, ?, ?)''', data)
         self.con.commit()
 
     #Выводим всех животных старше 2 лет используя LEFT JOIN
-    def get_all_animals_over_two_years_old(self,age):
+    def get_all_animals_over_two_years_old(self):
         sql_select_query = '''
         SELECT * 
         FROM animals LEFT JOIN animals2 
@@ -52,7 +52,7 @@ class Database():
         return print('Все животные старше 2-х лет', result)
 
     #Выводим животных старше 3 лет используя INNER JOIN
-    def get_all_animals_over_three_years_old(self,age):
+    def get_all_animals_over_three_years_old(self):
         sql_select_query ='''
         SELECT * 
         FROM animals INNER JOIN animals2 
@@ -62,7 +62,7 @@ class Database():
         return print('Все животные старше 3-х лет', result)
 
     #Выводим животных мужского пола используя любой из джоинов
-    def get_male_animals(self, gender):
+    def get_male_animals(self):
         sql_select_query ='''
         SELECT * 
         FROM animals INNER JOIN animals2
@@ -83,23 +83,21 @@ def main():
         ]
 
     animals2 = [
-        [1,'Texas horse', 'male', 12], 
-        [2,'Prada horse','female', 15], 
-        [3,'Vardi dog', 'male', 5],
-        [4,'Shusha cat', 'female', 4]
+        [5,'Texas horse', 'male', 12], 
+        [6,'Prada horse','female', 15], 
+        [7,'Vardi dog', 'male', 5],
+        [8,'Shusha cat', 'female', 4]
         ]
 
     db1 = Database('animals.db')
     db1.create_table_animals()
+    db1.create_table_animals2()
     db1.insert_table_animals(animals)
+    db1.insert_table_animals2(animals2)
 
-    db2 = Database('animals2.db')
-    db2.create_table_animals2()
-    db2.insert_table_animals2(animals2)
-
-    db3.get_all_animals_over_two_years_old()
-    db3.get_all_animals_over_three_years_old()
-    db3.get_male_animals()
+    db1.get_all_animals_over_two_years_old()
+    db1.get_all_animals_over_three_years_old()
+    db1.get_male_animals()
 
 if __name__ == '__main__':
     main()
