@@ -65,7 +65,7 @@ class Database():
     def get_male_animals(self):
         sql_select_query ='''
         SELECT * 
-        FROM animals LEFT JOIN animals2
+        FROM animals INNER JOIN animals2
         ON animals.gender = "male" and animals2.gender = "male" '''
         self.cur.execute(sql_select_query)
         result = self.cur.fetchall()
@@ -98,6 +98,6 @@ def main():
     db1.get_all_animals_over_two_years_old()
     db1.get_all_animals_over_three_years_old()
     db1.get_male_animals()
-    
+
 if __name__ == '__main__':
     main()
