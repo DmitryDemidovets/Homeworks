@@ -66,7 +66,7 @@ class Database():
         sql_select_query ='''
         SELECT * 
         FROM animals INNER JOIN animals2
-        ON animals.gender = male and animals2.gender = male'''
+        ON animals.gender = "male" and animals2.gender = "male" '''
         self.cur.execute(sql_select_query)
         result = self.cur.fetchall()
         return print('Все животные мужского пола', result)
