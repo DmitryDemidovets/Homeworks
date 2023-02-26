@@ -23,14 +23,14 @@ class Database():
         self.con.commit()
 
     def insert_table_clients(self, data):
-        self.cur.executemany('''INSERT INTO clients (id, name, gender, services_name) VALUES (?, ?, ?, ?)''', data)
+        self.cur.executemany('''INSERT INTO clients (id, client_name, gender, services_name) VALUES (?, ?, ?, ?)''', data)
         self.con.commit()
 
 #создаем таблицу услуги (название услуги, цена, количество)
     def create_table_services(self):
         self.cur.execute('''
         CREATE TABLE IF NOT EXISTS services
-        (id INTEGER PRIMARY KEY,
+        (id INTEGER PRIMARY KEY AUTOINCREMENT,
         service_name VARCHAR(50),
         price INTEGER,
         quantity INTEGER)
@@ -44,12 +44,11 @@ class Database():
     def create_table_orders(self):
         self.cur.execute('''
         CREATE TABLE IF NOT EXISTS orders
-        (id INTEGER PRIMARY KEY,
+        (id INTEGER PRIMARY KEY AUTOINCREMENT,
         client_name VARCHAR(50),
-        service_name VARCHAR(50)
+        service_name VARCHAR(50),
         price INTEGER,
-        FOREIGN KEY (id) REFERENCES clients
-        )
+        FOREIGN KEY (id) REFERENCES clients)
         ''')
 
     def insert_table_orders(self, data):
@@ -69,24 +68,24 @@ def main():
         ]
 
     services = [
-        [1,'massage1', 50, 30], 
-        [2,'massage2', 25, 30], 
-        [3,'massage3', 20, 20],
-        [4,'massage4', 15,20]
+        [5,'massage1', 50, 30], 
+        [6,'massage2', 25, 30], 
+        [7,'massage3', 20, 20],
+        [8,'massage4', 15,20]
         ]
 
     orders = [
-        [1,'Anna', 'massage1', 50], 
-        [2,'Dmitry','massage1' ,50], 
-        [3,'Denis', 'massage2', 25],
-        [4,'Lera', 'massage2', 25]
+        [9,'Anna', 'massage1', 50], 
+        [10,'Dmitry','massage1', 50], 
+        [11,'Denis', 'massage2', 25],
+        [12,'Lera', 'massage2', 25]
         ]
 
     db1 = Database('massage_service.db')
     db1.create_table_clients()
-    db1.insert_table_clients(clients)
+    #db1.insert_table_clients(clients)
     db1.create_table_services()
-    db1.insert_table_services(services)
+    #db1.insert_table_services(services)
     db1.create_table_orders()
     db1.insert_table_orders(orders)
 
