@@ -7,3 +7,7 @@
 # 2) InnerJOIN
 #LeftJOIN
 #RightJOIN
+
+import sqlalchemy
+#print("Версия SQLAlchemy:", sqlalchemy.__version__)
+
