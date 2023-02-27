@@ -12,5 +12,6 @@ class Car (Base):
     group = Column(Integer, ForeignKey('groups.id'))
 
     def __init__(self)
+    
 
 
