@@ -83,9 +83,9 @@ def main():
 
     db1 = Database('massage_service.db')
     db1.create_table_clients()
-    #db1.insert_table_clients(clients)
+    db1.insert_table_clients(clients)
     db1.create_table_services()
-    #db1.insert_table_services(services)
+    db1.insert_table_services(services)
     db1.create_table_orders()
     db1.insert_table_orders(orders)
 
