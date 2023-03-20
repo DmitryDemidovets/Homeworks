@@ -23,3 +23,4 @@ class Laptop(Base):
         self.hd = hd
         self.price = price
         self.screen = screen
+#
