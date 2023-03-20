@@ -1,5 +1,5 @@
 from sqlalchemy import creat_engine
-form sqlalchemy.ext.dclarative import declarative_base
+form sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import DeclarativeBase
 
 
@@ -13,4 +13,3 @@ class Base(DeclarativeBase)
 
 def create_database():
     Base.metadata.create_all(engine)
-    
