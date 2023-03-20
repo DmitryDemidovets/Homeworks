@@ -24,3 +24,4 @@ def get_query3(speed_cd1, speed_cd2, value):
             
         for u in result:
             print(f'Manufacturer: {u.manufacturer} Model: {u.model} Speed: {u.speed} HDD: {u.hd}')
+#
