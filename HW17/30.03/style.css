@@ -1,0 +1,52 @@
+body{
+    margin:0 auto
+}
+.container{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    
+}
+.section1{
+    height: 135px;
+    background: #579D10;
+    color: white;
+
+}
+
+.section2{
+    color:black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+.text{
+    background: #579D10;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.btn{
+    padding:5px;
+    background: #e48509;
+    border-radius: 15px;
+    border:none;
+    width:120px;
+    height:35px;
+}
+.column{
+    display: flex;
+    flex-direction: row;
+    margin-top:50px;
+    gap: 50px;
+}
+.line{
+    background:rgb(21, 39, 121);
+    height: 20px;
+    width: 1600px;
+}

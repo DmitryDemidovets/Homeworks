@@ -1,15 +1,18 @@
-from sqlalchemy import creat_engine
-form sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import DeclarativeBase
 
 
-DATABASE_NAME = 'computer.firm.db'
+DATABASE_NAME = 'computer_firm.db'
 
-engine = creat_engine(f'ssqlite:///{DATABASE_NAME}')
+engine = create_engine(f'sqlite:///{DATABASE_NAME}')
 
-class Base(DeclarativeBase)
+
+class Base(DeclarativeBase):
     pass
 
 
 def create_database():
     Base.metadata.create_all(engine)
+#
+
