@@ -1,0 +1,9 @@
+body {
+    margin: 0 auto;
+
+}
+.header{
+    background-color: aqua;
+    height: 30%;
+    width: 100%;
+}
