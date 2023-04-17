@@ -1,0 +1,92 @@
+$green: #579D10
+$blue:rgb(21, 39, 121)
+$orange:#e48509
+$black:black
+$white:white
+$size:50px
+$b_r: 15px
+@mixin style
+    border-radius: 15px
+body
+    margin:0 auto
+
+.container
+    margin-left: $size
+    margin-right: $size
+.block1__header
+    display: flex
+    justify-content: space-around
+    padding-top:$size
+.block1
+    height: 135px
+    background:$green
+    color: $white
+    position:sticky
+    top: 0
+
+.block2
+    color:$black
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+
+.block2__column__text
+    background: $green
+    @include style
+    padding:5px
+    margin-bottom: 30px
+
+.block2__btn
+    @include style
+    padding:5px
+    background: $orange
+    border:none
+    width:120px
+    height:35px
+
+.block2__column
+    display: flex
+    flex-direction: row
+    margin-top:$size
+    gap:$size
+
+.block3__line
+    background:$blue
+    height: 20px
+    width: 1600px
+
+.block3 
+    margin-top:100px
+    margin-bottom:$size
+
+.block3__footer 
+    display:flex
+    flex-direction: row
+    gap:10px
+    justify-content: space-between
+
+.block3__footer__left 
+    display:flex
+    flex-direction: column
+    gap:10px
+    margin-top: $size
+
+.block3__green__box 
+    background-color:$green
+    height: 25px
+    width:120px
+    @include style
+
+.block3__blue__box 
+    background-color:$blue
+    height: 25px
+    width: 100px
+    @include style
+
+.block3__footer__right
+    background-color: $green
+    height:150px
+    width:600px
+    @include style
+    margin-top:$size
+
