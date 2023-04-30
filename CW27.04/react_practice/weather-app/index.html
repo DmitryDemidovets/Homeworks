@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;1,200&family=Nunito:ital,wght@0,200;1,200;1,600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- SEARCH -->
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Enter your location..." />
+            <button class="fa-solid fa-magnifying-glass"></button>
+        </div>
+
+        <!-- ERROR -->
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+
+        <!-- WEATHER CLOUD -->
+        <div class="weather">
+            <div class="weather-image">
+                <i class="fa-solid fa-cloud"></i>
+            </div>
+            <h1 class="temp">22 &#8451</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <i class="fa-solid fa-water"></i>
+                    <p class="humidity">50%</p>
+                    <p>humidity</p>
+                </div>
+
+                <div class="col">
+                    <i class="fa-solid fa-wind"></i>
+                    <p class="wind">15 km/h</p>
+                    <p>Wind speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
