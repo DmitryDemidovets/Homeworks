@@ -1,0 +1,30 @@
+#modal {
+    display: none;
+    position:fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    background-color: blue;
+}
+
+.modal-content {
+    margin:15% auto;
+    padding:20px;
+    border:1px solid #ccc;
+    width:30%;
+    height:30%;
+}
+
+#btnClose {
+    color:azure;
+    font-size:medium;
+    font-weight:bold;
+}
+
+#btnClose:hover, 
+#btnClose:focus {
+    cursor: pointer;
+    font-size: larger;
+}
