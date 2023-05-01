@@ -1,0 +1,62 @@
+@block_bg_color: #0f0f0e
+@size: 50px
+@font_fam: serif
+@mixin flex 
+    display:flex
+    justify-content: center
+@mixin margin    
+    margin-left: @size
+    margin-right: @size
+
+body
+    margin:0 auto
+    font-family: @font_fam
+    font-weight: 100
+    font-style: italic
+
+.container
+    @include margin
+    @include flex
+
+.block1
+    height: 135px
+    background: #0f0f0e
+    color: white
+    position:sticky
+    top: 0
+    @include flex
+
+.block1__header
+    justify-content: space-around
+    padding-top: 25px
+    @include flex
+
+.block2__column 
+    @include flex
+
+.block2__image 
+    @include flex
+
+.block3__column 
+    @include flex
+
+.block3__image 
+    @include flex
+
+.block4__column 
+    @include flex
+
+.block4__image 
+    @include flex
+
+.block5__column 
+    @include flex
+    font-family: @font_fam
+    font-weight: 100
+
+.block5__image 
+    @include flex
+
+.block5__column__text 
+    @include flex
+
