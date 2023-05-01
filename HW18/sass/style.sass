@@ -1,18 +1,22 @@
 @block_bg_color: #0f0f0e
 @size: 50px
 @font_fam: serif
-@mixin flex 
-    display:flex
-    justify-content: center
+
 @mixin margin    
     margin-left: @size
     margin-right: @size
+
+@mixin flex
+    display:flex
+    justify-content: center
 
 body
     margin:0 auto
     font-family: @font_fam
     font-weight: 100
     font-style: italic
+    @include flex
+
 
 .container
     @include margin
@@ -35,6 +39,7 @@ body
     @include flex
 
 .block2__image 
+    display:flex
     @include flex
 
 .block3__column 
@@ -59,4 +64,3 @@ body
 
 .block5__column__text 
     @include flex
-
