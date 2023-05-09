@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Auto-sng.by</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="p-4 nav-link active" aria-current="page" href="#">Транспорт</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-4 nav-link" href="#">Запчасти</a>
+                    </li>
+                    <button type="button" class=" m-1 btn btn-success">Проверка VIN</button>
+ 
+                    <button type="button" class=" m-1 btn btn-primary">Подать объявление</button>
+                    
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control" type="search" placeholder="Объявления" aria-label="search">
+                    <button class=" m-2 btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+                <form class="d-flex">
+                    <input class="m-1 form-control me-2" type="search" placeholder="Введите логин" aria-label="search">
+                    <button class="btn btn-outline-success" type="submit">Войти</button>
+                </form>
+                <button type="button" class="btn btn-link">Регистрация</button>
+                
+            </div>
+        </div>
+    </nav>
+    <nav class=" nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Легковые</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Грузовые</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Мото</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Электромобили</a>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Все</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Новые</a>
+                    <a class="nav-link" href="#">С пробегом</a>
+                </div>
+                <button type="button" class="btn btn-light">В кредит</button>
+                <button type="button" class="btn btn-outline-primary">Марки</button>
+                <button type="button" class="m-1 btn btn-outline-primary">Помощник в подборе</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-10 text-center">
+        <div class="row row-cols-4 gy-5">
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-alfa.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfa Romeo</h5>
+                        <p class="card-text">Итальянский производитель автомобилей премиум-класса. Компания была основана французским
+                        инженером-предпринимателем Александром Дарраком под именем A.L.F.A.
+                        </p>
+                        <a href="https://cars.av.by/alfa-romeo" target="_blank" class="btn btn-primary">209 вариантов</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-dodge.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Dodge</h5>
+                        <p class="card-text">Под маркой Dodge выпускаются легковые автомобили, пикапы, внедорожники и коммерческие автомобили. Компания была основана
+                        в 1900 году братьями Додж для выпуска автомобильных комплектующих.</p>
+                        <a href="https://cars.av.by/dodge" target="_blank" class="btn btn-primary">306 вариантов</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://www.pngplay.com/wp-content/uploads/13/Kia-Logo-PNG-Photos.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kia</h5>
+                        <p class="card-text">Южнокорейская автомобилестроительная компания, второй автопроизводитель в Республике Корея. Основана в декабре 1944
+                        года, после банкротства в 1997 году вошла в состав Hyundai Motor Group.</p>
+                        <a href="https://cars.av.by/kia" target="_blank" class="btn btn-primary">1460 вариантов</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-nissan.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nissan</h5>
+                        <p class="card-text">Японский автопроизводитель, один из крупнейших в мире. Компания основана в 1933 году. Штаб-квартира находится в городе
+                        Иокогама. Входит в Альянс Renault–Nissan–Mitsubishi.</p>
+                        <a href="https://cars.av.by/nissan" target="_blank" class="btn btn-primary">1865 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://a.allegroimg.com/s600/110179/305d43974eb3a2e469bcc3de50dc/Naklejka-na-samochod-auto-skoda-logo-emblemat-15cm" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Skoda</h5>
+                        <p class="card-text">Крупнейший производитель автомобилей в Чешской Республике, со штаб-квартирой, расположенной в городе Млада-Болеслав.
+                        </p>
+                        <a href="https://cars.av.by/skoda" target="_blank" class="btn btn-primary">1126 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://www.carlogos.org/car-logos/audi-logo-1985-show.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Audi</h5>
+                        <p class="card-text">Немецкая автомобилестроительная компания в составе концерна Volkswagen Group, специализирующаяся на выпуске
+                        автомобилей под маркой Audi</p>
+                        <a href="https://cars.av.by/audi" target="_blank" class="btn btn-primary">3798 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://s38.wheelsage.org/format/picture/picture-preview-large/fiat/autowp.ru_fiat_logo_3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Fiat</h5>
+                        <p class="card-text">итальянская компания — производитель автомобилей (производит автомобили, двигатели), финансовое и производственное
+                        объединение. Штаб-квартира расположена в Турине (регион Пьемонт)</p>
+                        <a href="https://cars.av.by/fiat" target="_blank" class="btn btn-primary">549 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/lada-big.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lada</h5>
+                        <p class="card-text">Марка автомобилей, производимых АО «АвтоВАЗ». Ранее использовалась только для автомобилей, поставлявшихся на экспорт, а
+                        для внутреннего рынка автомобили производились под маркой «ВАЗ».</p>
+                        <a href="https://cars.av.by/lada-vaz" target="_blank" class="btn btn-primary">1078 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-opel.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Opel</h5>
+                        <p class="card-text">Немецкий производитель автомобилей, штаб-квартира расположена в Рюссельсхайме (Германия). Компания была основана 21 января 1862 года; к выпуску автомобилей приступили в 1899 году.</p>
+                        <a href="https://cars.av.by/opel" target="_blank" class="btn btn-primary">2097 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/emblema-subaru.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Subaru</h5>
+                        <p class="card-text">Автомобилестроительный бренд, принадлежит компании Subaru Corporation. Объём производства в 2011 году составил 528 234
+                        легковых и 52 027 коммерческих автомобилей</p>
+                        <a href="https://cars.av.by/subaru" target="_blank" class="btn btn-primary">362 варианта</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-bmw.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW</h5>
+                        <p class="card-text">Немецкий производитель автомобилей, мотоциклов, двигателей, а также велосипедов. Более 45 % акций принадлежит семье
+                        Квандт[</p>
+                        <a href="https://cars.av.by/bmw" target="_blank" class="btn btn-primary">5826 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/lexus-logo-1988-1920x1080-1024x576.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lexus</h5>
+                        <p class="card-text">Марка премиальных автомобилей, производимых японской корпорацией Toyota Motor. Автомобили бренда продаются более чем в
+                        90 странах мира</p>
+                        <a href="https://cars.av.by/lexus" target="_blank" class="btn btn-primary">566 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/peugeot.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Peugeot</h5>
+                        <p class="card-text">Один из основных французских производителей автомобилей, часть PSA Peugeot Citroën. По данным 2007 года материнская
+                        компания PSA Peugeot Citroën является вторым по величине в Европе производителем автомобилей</p>
+                        <a href="https://cars.av.by/peugeot" target="_blank" class="btn btn-primary">2340 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/Suzuki_logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Suzuki</h5>
+                        <p class="card-text">Японская машиностроительная компания. Штаб-квартира — в городе Хамамацу, префектура Сидзуока. В списке крупнейших
+                        публичных компаний мира Forbes Global 2000 за 2022 год Suzuki Motor заняла 560-е место[</p>
+                        <a href="https://cars.av.by/suzuki" target="_blank" class="btn btn-primary">191 вариант</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-chevrolet.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet</h5>
+                        <p class="card-text">Марка автомобилей, производимых и реализуемых одноимённым экономически самостоятельным подразделением корпорации General
+                        Motors</p>
+                        <a href="https://cars.av.by/chevrolet" target="_blank" class="btn btn-primary">1095 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-geely.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Geely</h5>
+                        <p class="card-text">Одна из крупнейших китайских автомобилестроительных компаний, базирующаяся в Гонконге. Официально зарегистрирована на
+                        Каймановых островах</p>
+                        <a href="https://cars.av.by/geely" target="_blank" class="btn btn-primary">668 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/8/8d/Mazda_2018.svg/190px-Mazda_2018.svg.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mazda</h5>
+                        <p class="card-text">Японская автомобилестроительная компания, выпускающая автомобили «Мазда». Штаб-квартира расположена в посёлке Футю, уезд
+                        Аки, префектура Хиросима, Япония</p>
+                        <a href="https://cars.av.by/mazda" target="_blank" class="btn btn-primary">1497 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Renault_2009_logo.svg/2048px-Renault_2009_logo.svg.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Renault</h5>
+                        <p class="card-text">Французская автомобилестроительная корпорация, основанная в 1899 году. Штаб-квартира компании расположена в городе
+                        Булонь-Бийанкуре, недалеко от Парижа. Входит в Альянс Renault–Nissan–Mitsubishi.</p>
+                        <a href="https://cars.av.by/renault" target="_blank" class="btn btn-primary">3309 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-toyota.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota</h5>
+                        <p class="card-text">Крупнейшая японская автомобилестроительная корпорация, также предоставляющая финансовые услуги и имеющая несколько
+                        дополнительных направлений в бизнесе</p>
+                        <a href="https://cars.av.by/toyota" target="_blank" class="btn btn-primary">2047 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-chrysler.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chrysler</h5>
+                        <p class="card-text">Североамериканское подразделение Stellantis, международной автомобилестроительной компании. Основой подразделения
+                        является компания FCA US LLC, преемник компании Chrysler.</p>
+                        <a href="https://cars.av.by/chrysler" target="_blank" class="btn btn-primary">291 вариант</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/honda-logo-1920x1080-1024x576.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda</h5>
+                        <p class="card-text">Японская транснациональная корпорация, основанная в 1948 году изобретателем и предпринимателем Соитиро Хондой и
+                        финансистом Такэо Фудзисавой, производитель автомобилей и мотоциклов</p>
+                        <a href="https://cars.av.by/honda" target="_blank" class="btn btn-primary">1099 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/mercedes-benz-logo-2011-1920x1080-1024x576.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes-Benz</h5>
+                        <p class="card-text">Производитель легковых автомобилей премиального класса, грузовых автомобилей, автобусов и других транспортных средств,
+                        входящая в состав немецкого концерна «Mercedes-Benz Group</p>
+                        <a href="https://cars.av.by/mercedes-benz" target="_blank" class="btn btn-primary">3615 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/rover-logo-2003-3840x2160-1024x576.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Rover</h5>
+                        <p class="card-text">Британская автомобилестроительная компания. Была упразднена в 2005 году, марку Rover хотела купить китайская компания
+                        SAIC, но торговая марка была продана Ford. В настоящее время автомобили под маркой «Rover» не выпускаются</p>
+                        <a href="https://cars.av.by/rover" target="_blank" class="btn btn-primary">176 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://e7.pngegg.com/pngimages/766/263/png-clipart-volkswagen-group-car-volkswagen-polo-logo-volkswagen-emblem-text.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Volkswagen</h5>
+                        <p class="card-text">Немецкая автомобильная марка, одна из многих, принадлежащих концерну Volkswagen AG. Под этой маркой в 2019 году было
+                        реализовано 6 млн 620 тыс. автомобилей</p>
+                        <a href="https://cars.av.by/volkswagen" target="_blank" class="btn btn-primary">6738 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/emblema-citroen.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Citroen</h5>
+                        <p class="card-text">Французская автомобилестроительная компания, созданная в 1919 году Андре Ситроеном. С 1976 года она стала частью
+                        концерна PSA Peugeot Citroën, штаб-квартира находится на улице Fructidor в Париже.</p>
+                        <a href="https://cars.av.by/citroen" target="_blank" class="btn btn-primary">1592 варианта</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/hyundai-logo-silver-2560x1440-1024x556.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai</h5>
+                        <p class="card-text">Корейский чеболь (конгломерат), основанный Чон Чжу-ёном. После Азиатского финансового кризиса компания передала в особые
+                        подразделения большинство видов бизнеса, в том числе: «Hyundai Motor Group», «Hyundai Department Store Group» и «Hyundai
+                        Heavy Industries Group». Название «Hyundai» происходит от синокорейского слова 現代, что означает «современность»</p>
+                        <a href="https://cars.av.by/hyundai" target="_blank" class="btn btn-primary">1667 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://365cars.ru/wp-content/uploads/2014/01/jemblema-avtomobilja-mitsubishi.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mitsubishi</h5>
+                        <p class="card-text">Японский конгломерат, один из первых дзайбацу. Крупнейшие компании, входящие в его состав — Mitsubishi Corporation,
+                        Mitsubishi UFJ Financial Group, Mitsubishi Heavy Industries</p>
+                        <a href="https://cars.av.by/mitsubishi" target="_blank"class="btn btn-primary">865 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://автолого.рф/wp-content/uploads/volvo-logo-2014-1920x1080-1024x576.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Volvo</h5>
+                        <p class="card-text">Концерн, производящий коммерческие и грузовые автомобили, автобусы, двигатели и различное оборудование. Головной
+                        компанией концерна является компания AB Volvo</p>
+                        <a href="https://cars.av.by/volvo" target="_blank" class="btn btn-primary">1574 вариантов</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous">
+    </script>
+</body>
+</html>
